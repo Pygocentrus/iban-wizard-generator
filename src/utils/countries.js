@@ -94,4 +94,9 @@ const countries = [
   { "code": "VG", "name": "Virgin_Islands", "length": 24, "character": 4 }
 ];
 
-export { countries };
+function getCountryName(country) {
+  if (!country) return ''
+  return country.replace(/_/g, ' ');
+}
+
+export { countries, getCountryName };

@@ -1,7 +1,7 @@
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Country } from "@/utils/ibanGeneratorv2";
-import { countries } from "@/utils/countries";
+import { countries, getCountryName } from "@/utils/countries";
 
 interface CountrySelectorProps {
   onCountryChange: (countryCode: string) => void;
@@ -23,7 +23,7 @@ export function CountrySelector({ onCountryChange, selectedCountry }: CountrySel
             <SelectItem key={country.code} value={country.code} className="py-3">
               <div className="flex items-center gap-3">
                 <span className="text-lg">{country.code}</span>
-                <span>{country.name.replace(/_/g, ' ')}</span>
+                <span>{getCountryName(country.name)}</span>
               </div>
             </SelectItem>
           ))}

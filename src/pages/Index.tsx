@@ -2,11 +2,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shuffle, CreditCard, Shield, Info } from "lucide-react";
+import { Shuffle, Landmark, Shield, Info } from "lucide-react";
 import { CountrySelector } from "@/components/CountrySelector";
 import { IBANDisplay } from "@/components/IBANDisplay";
 import { generateIBAN } from "@/utils/ibanGeneratorv2";
-import { countries } from "@/utils/countries";
+import { countries, getCountryName } from "@/utils/countries";
 import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
@@ -44,7 +44,7 @@ const Index = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <CreditCard className="w-10 h-10" style={{ color: 'rgb(79, 182, 69)' }} />
+            <Landmark className="w-10 h-10" style={{ color: 'rgb(79, 182, 69)' }} />
             <h1 className="text-4xl font-bold text-gray-900">
               IBAN Generator
             </h1>
@@ -138,7 +138,7 @@ const Index = () => {
               {countries.map((country) => (
                 <div key={country.code} className="flex items-center gap-2 text-sm text-gray-600">
                   <span className="font-mono font-medium">{country.code}</span>
-                  <span>{country.name}</span>
+                  <span>{getCountryName(country.name)}</span>
                 </div>
               ))}
             </div>

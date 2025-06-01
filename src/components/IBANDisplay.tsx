@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Copy, Check } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { getCountryName } from "@/utils/countries";
 
 interface IBANDisplayProps {
   iban: string;
@@ -38,7 +39,7 @@ export function IBANDisplay({ iban, countryName }: IBANDisplayProps) {
         <div className="text-center space-y-4">
           <div>
             <h3 className="text-lg font-semibold text-gray-800 mb-1">
-              Generated IBAN for {countryName}
+              Generated IBAN for {getCountryName(countryName)}
             </h3>
             <p className="text-sm text-gray-600">
               Fake but structurally valid IBAN
