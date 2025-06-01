@@ -33,7 +33,7 @@ export function IBANDisplay({ iban, countryName }: IBANDisplayProps) {
   };
 
   return (
-    <Card className="w-full bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
+    <Card className="w-full bg-gradient-to-br from-green-50 to-green-100 border-green-200">
       <CardContent className="p-6">
         <div className="text-center space-y-4">
           <div>
@@ -45,7 +45,7 @@ export function IBANDisplay({ iban, countryName }: IBANDisplayProps) {
             </p>
           </div>
           
-          <div className="bg-white rounded-lg p-4 border-2 border-dashed border-blue-300">
+          <div className="bg-white rounded-lg p-4 border-2 border-dashed border-green-300">
             <code className="text-xl font-mono text-gray-800 tracking-wide break-all">
               {iban}
             </code>
@@ -53,7 +53,7 @@ export function IBANDisplay({ iban, countryName }: IBANDisplayProps) {
           
           <Button
             onClick={handleCopy}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white transition-all duration-200"
+            className="w-full bg-green-600 hover:bg-green-700 text-white transition-all duration-200"
             size="lg"
           >
             {copied ? (
