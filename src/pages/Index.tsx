@@ -5,7 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shuffle, CreditCard, Shield, Info } from "lucide-react";
 import { CountrySelector } from "@/components/CountrySelector";
 import { IBANDisplay } from "@/components/IBANDisplay";
-import { generateIBAN, countries } from "@/utils/ibanGenerator";
+import { generateIBAN } from "@/utils/ibanGeneratorv2";
+import { countries } from "@/utils/countries";
 import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
@@ -63,15 +64,6 @@ const Index = () => {
               onCountryChange={setSelectedCountry}
               selectedCountry={selectedCountry}
             />
-            
-            {selectedCountryData && (
-              <div className="bg-gray-50 rounded-lg p-4">
-                <h4 className="font-medium text-gray-800 mb-2">Example Format:</h4>
-                <code className="text-sm text-gray-600 font-mono">
-                  {selectedCountryData.example}
-                </code>
-              </div>
-            )}
 
             <Button
               onClick={handleGenerateIBAN}
