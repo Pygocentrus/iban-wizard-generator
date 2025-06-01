@@ -38,12 +38,12 @@ const Index = () => {
   const selectedCountryData = countries.find(c => c.code === selectedCountry);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <CreditCard className="w-10 h-10 text-blue-600" />
+            <CreditCard className="w-10 h-10" style={{ color: 'rgb(79, 182, 69)' }} />
             <h1 className="text-4xl font-bold text-gray-900">
               IBAN Generator
             </h1>
@@ -54,7 +54,7 @@ const Index = () => {
         </div>
 
         {/* Main Generator Card */}
-        <Card className="mb-8 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
+        <Card className="mb-8 shadow-lg border-0 bg-white">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl text-gray-800">Generate IBAN</CardTitle>
           </CardHeader>
@@ -76,7 +76,21 @@ const Index = () => {
             <Button
               onClick={handleGenerateIBAN}
               disabled={!selectedCountry}
-              className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-lg py-6 transition-all duration-200 shadow-lg"
+              className="w-full text-white text-lg py-6 transition-all duration-200 shadow-lg"
+              style={{ 
+                backgroundColor: 'rgb(79, 182, 69)',
+                borderColor: 'rgb(79, 182, 69)'
+              }}
+              onMouseEnter={(e) => {
+                if (!e.currentTarget.disabled) {
+                  e.currentTarget.style.backgroundColor = 'rgb(69, 162, 59)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!e.currentTarget.disabled) {
+                  e.currentTarget.style.backgroundColor = 'rgb(79, 182, 69)';
+                }
+              }}
               size="lg"
             >
               <Shuffle className="w-5 h-5 mr-2" />
@@ -97,10 +111,10 @@ const Index = () => {
 
         {/* Info Cards */}
         <div className="grid md:grid-cols-2 gap-6">
-          <Card className="bg-white/60 backdrop-blur-sm border-0 shadow-md">
+          <Card className="bg-white border shadow-md">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-3">
-                <Shield className="w-6 h-6 text-green-600" />
+                <Shield className="w-6 h-6" style={{ color: 'rgb(79, 182, 69)' }} />
                 <h3 className="text-lg font-semibold text-gray-800">Safe Testing</h3>
               </div>
               <p className="text-gray-600">
@@ -110,10 +124,10 @@ const Index = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-white/60 backdrop-blur-sm border-0 shadow-md">
+          <Card className="bg-white border shadow-md">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-3">
-                <Info className="w-6 h-6 text-blue-600" />
+                <Info className="w-6 h-6" style={{ color: 'rgb(79, 182, 69)' }} />
                 <h3 className="text-lg font-semibold text-gray-800">Valid Format</h3>
               </div>
               <p className="text-gray-600">
@@ -125,7 +139,7 @@ const Index = () => {
         </div>
 
         {/* Supported Countries */}
-        <Card className="mt-8 bg-white/60 backdrop-blur-sm border-0 shadow-md">
+        <Card className="mt-8 bg-white border shadow-md">
           <CardContent className="p-6">
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Supported Countries</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">

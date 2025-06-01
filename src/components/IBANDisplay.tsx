@@ -53,7 +53,17 @@ export function IBANDisplay({ iban, countryName }: IBANDisplayProps) {
           
           <Button
             onClick={handleCopy}
-            className="w-full bg-green-600 hover:bg-green-700 text-white transition-all duration-200"
+            className="w-full text-white transition-all duration-200"
+            style={{ 
+              backgroundColor: 'rgb(79, 182, 69)',
+              borderColor: 'rgb(79, 182, 69)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgb(69, 162, 59)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgb(79, 182, 69)';
+            }}
             size="lg"
           >
             {copied ? (
