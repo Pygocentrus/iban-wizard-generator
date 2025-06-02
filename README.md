@@ -10,4 +10,8 @@ npm i
 npm run dev
 
 # Step 3: Open http://localhost:8080
+
+# Step 4: Build!
+npm run build
+# Outputs the `/dist` folder that can be deployed
 ```
